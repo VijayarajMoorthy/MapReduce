@@ -86,15 +86,15 @@ class Program1Reducer extends Reducer<Text,Text,Text,IntWritable> {
 public class Reza_Marzban_Program_1{
   public static void main(String[] args) throws Exception{
 	if(args.length!=2){
-		System.err.println("Usage: Reza_Marzban_Program_1 <input path> <output path>");
+		System.err.println("Usage: Mapreduce_program.java <input path> <output path>");
 		System.exit(-1);
 	}
 	Configuration conf = new Configuration();
     Job job = Job.getInstance(conf);
-    job.setJarByClass(Reza_Marzban_Program_1.class);
-	job.setJobName("Reza Marzban Program 1");
-    job.setMapperClass(Program1Mapper.class);
-    job.setReducerClass(Program1Reducer.class);
+    job.setJarByClass(Mapreduce_program.class);
+	job.setJobName("Program");
+    job.setMapperClass(ProgramMapper.class);
+    job.setReducerClass(ProgramReducer.class);
     job.setOutputKeyClass(Text.class);
     job.setOutputValueClass(IntWritable.class);
 	job.setMapOutputKeyClass(Text.class);
